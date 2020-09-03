@@ -1,0 +1,12 @@
+spring:
+  cloud:
+   gateway:
+    routes:
+      - id: applyCreditCard
+        uri: lb://APPLY-CREDIT-CARD
+        predicates:
+        - Path=/applyCreditCard/**
+      - id: creditCardApproval
+        uri: lb://CREDIT-CARD-APPROVAL
+        predicates:
+        - Path=/approveCreditCard/**
